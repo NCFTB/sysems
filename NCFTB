@@ -1,0 +1,30 @@
+#!/bin/bash
+# Full setup for all NCFTB Systems.
+
+echo "This script will be updating, and adding software for use with NCFTB, Please wait until it is complete"
+
+echo "Updating..."
+
+sudo apt-get update
+
+echo "Update complete"
+
+echo "Grabbing BOINC"
+
+sudo aptitude install boinc-client boinc-manager
+
+echo "BOINC is done. Now grabbing F@H it will ask for Input, follow the instructions. After that you should be done."
+
+wget --no-check-certificate https://fah.stanford.edu/.../fahclient_7.4.4_amd64.deb
+
+wget --no-check-certificate https://fah.stanford.edu/.../fahcontrol_7.4.4-1_all.deb
+
+wget --no-check-certificate https://fah.stanford.edu/.../fahviewer_7.4.4_am
+
+sudo dpkg -i --force-depends fahclient_7.4.4_amd64.deb
+
+sudo dpkg -i --force-depends fahcontrol_7.4.4-1_all.deb
+
+sudo apt-get update
+
+echo "Done"
